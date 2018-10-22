@@ -1,0 +1,38 @@
+<div class="p-2">
+	<label> Lista de Usuarios </label>
+	<br>
+	<button mat-raised-button color="primary" [routerLink]="['/usuario/nuevo']">Nuevo</button>
+	<hr>
+	<mat-spinner *ngIf="!datauser?.data?.length"></mat-spinner>
+	<div class="mat-elevation-z8" *ngIf="datauser?.data?.length">
+		<table mat-table [dataSource]="datauser.data" class="mat-elevation-z8 w-100">
+			<ng-container matColumnDef="select">
+				<th mat-header-cell *matHeaderCellDef># </th>
+				<td mat-cell *matCellDef="let row">
+					<a [routerLink]="['/usuario/editar',row.id]">Editar </a>
+				</td>
+			</ng-container>
+			<ng-container matColumnDef="id">
+				<th mat-header-cell *matHeaderCellDef> ID</th>
+				<td mat-cell *matCellDef="let user"> {{user.id}} </td>
+			</ng-container>
+			<ng-container matColumnDef="first_name">
+				<th mat-header-cell *matHeaderCellDef> First Name </th>
+				<td mat-cell *matCellDef="let user"> {{user.first_name}} </td>
+			</ng-container>
+			<ng-container matColumnDef="last_name">
+				<th mat-header-cell *matHeaderCellDef> Last Name. </th>
+				<td mat-cell *matCellDef="let user"> {{user.last_name}} </td>
+			</ng-container>
+			<ng-container matColumnDef="avatar">
+				<th mat-header-cell *matHeaderCellDef> Avatar </th>
+				<td mat-cell *matCellDef="let user">
+					<img [src]="user.avatar" alt="Avatar">
+				</td>
+			</ng-container>
+			<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+			<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+		</table>
+		<mat-paginator [length]="datauser.total" [pageSize]="datauser.per_page" [pageSize]="datauser.total_pages" (page)="get_users(param_page+($event.pageIndex +1))"></mat-paginator>
+	</div>
+</div>

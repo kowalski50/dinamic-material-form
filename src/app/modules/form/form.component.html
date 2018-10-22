@@ -1,0 +1,16 @@
+<div class="form">
+	<div style="text-align:center">
+		<h1>
+			Dinamic Input
+		</h1>
+
+		<mat-form-field class="w-100">
+			<input matInput placeholder="Add input name" name="inputname" #inputname ngModel required>
+		</mat-form-field>
+		<button type="button" mat-raised-button color="primary" class="px-4" (click)="add_input(inputname.value,$event)">
+			Add Input
+		</button>
+
+	</div>
+	<dynamic-form *ngIf="!adding" [fields]="regConfig" (submit)="submit($event)"> </dynamic-form>
+</div>

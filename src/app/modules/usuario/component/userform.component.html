@@ -1,0 +1,12 @@
+<form class="form" #userform="ngForm">
+	<mat-form-field class="w-100">
+		<input matInput placeholder="First Name" name="first_name" [(ngModel)]="input.first_name" required>
+	</mat-form-field>
+	<mat-form-field class="w-100">
+		<input matInput placeholder="Last Name" name="last_name" [(ngModel)]="input.last_name" required>
+	</mat-form-field>
+	<div class="w-100">
+		<button type="button" mat-raised-button color="primary" (click)="save_user(input)" [disabled]="!userform.valid">GUARDAR</button>
+		<button type="button" mat-raised-button color="primary" class="px-4" [routerLink]="['/usuario/lista']">Cancelar</button>
+	</div>
+</form>

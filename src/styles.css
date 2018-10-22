@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.p-2 {
+	padding: 2rem;
+}
+
+.p-3 {
+	padding: 3rem;
+}
+
+.p-4 {
+	padding: 4rem;
+}
+
+.px-2.mat-raised-button {
+	margin-right: 2rem;
+	margin-left: 2rem;
+}
+
+.px-3.mat-raised-button {
+	margin-right: 3rem;
+	margin-left: 3rem;
+}
+
+.px-4.mat-raised-button {
+	margin-right: 4rem;
+	margin-left: 4rem;
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.margin-top {
+	margin-top: 15px;
+}
+
+.margin-left {
+	margin-left: 10px;
+}
+
+.radio-label-padding {
+	padding-right: 10px;
+	color: grey;
+}
+
+.form {
+	width: 400px;
+	margin-top: 10px;
+}
