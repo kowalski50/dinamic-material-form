@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/custom-input-demo",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
